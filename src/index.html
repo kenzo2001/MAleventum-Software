@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoftTech - Homepage</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Sfondo dinamico con particelle */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Manteniamo i contenuti sopra le particelle */
+    .content-overlay {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Particles -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <header class="navbar content-overlay">
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="Logo" />
+      <span>SoftTech</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#chi-siamo">Chi Siamo</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>MAleventum Software</h1>
+      <p>Creiamo tecnologie su misura per far crescere il tuo business.</p>
+      <a href="#servizi" class="btn">Scopri di più</a>
+    </div>
+  </section>
+
+  <!-- Sezione Servizi -->
+  <section id="servizi" class="servizi">
+    <h2>I nostri Servizi</h2>
+    <div class="servizi-container">
+      <div class="servizio-card">
+        <img src="assets/img/code.png" alt="Sviluppo Software">
+        <h3>Sviluppo Software</h3>
+        <p>Creazione di applicazioni software su misura per il tuo business.</p>
+      </div>
+      <div class="servizio-card">
+        <img src="assets/img/code.png" alt="Web APP">
+        <h3>Web app</h3>
+        <p>Creazione di applicazioni web e mobile su misura per il tuo business.</p>
+      </div>
+      <div class="servizio-card">
+        <img src="assets/img/ai.png" alt="Intelligenza Artificiale">
+        <h3>Intelligenza Artificiale</h3>
+        <p>Soluzioni AI per analisi dati, automazione e processi intelligenti.</p>
+      </div>
+      <div class="servizio-card">
+        <img src="assets/img/ai.png" alt="Chat Bot">
+        <h3>Chat Bot</h3>
+        <p>Chat personalizzate per il servizio clienti.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 SoftTech - Tutti i diritti riservati</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
