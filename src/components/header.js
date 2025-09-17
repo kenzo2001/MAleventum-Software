@@ -29,15 +29,43 @@ class HeaderComponent extends HTMLElement {
           list-style: none;
           display: flex;
           gap: 25px;
+          position: relative;
+        }
+        nav li {
+          position: relative;
         }
         nav a {
           text-decoration: none;
           color: white;
           transition: color 0.3s ease;
+          cursor: pointer;
         }
         nav a:hover {
           color: #00bfff;
         }
+        /* Dropdown */
+        .dropdown {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: rgba(10,25,47,0.95);
+          min-width: 180px;
+          flex-direction: column;
+          padding: 10px 0;
+          border-radius: 6px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+          z-index: 5;
+        }
+        .dropdown a {
+          padding: 8px 20px;
+          display: block;
+          white-space: nowrap;
+        }
+        .dropdown a:hover {
+          background-color: #007bbf;
+        }
+        /* Responsive */
         @media (max-width: 900px) {
           .navbar {
             flex-direction: column;
@@ -49,6 +77,7 @@ class HeaderComponent extends HTMLElement {
           }
         }
       </style>
+
       <header class="navbar">
         <div class="logo">
           <img src="assets/img/logo.png" alt="Logo">
@@ -57,13 +86,34 @@ class HeaderComponent extends HTMLElement {
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#servizi">Servizi</a></li>
+            <li class="menu-servizi">
+              <a>Servizi ⭣</a>
+              <div class="dropdown">
+                <a href="sviluppo-software.html">Sviluppo Software</a>
+                <a href="pagine-web.html">Pagine Web</a>
+                <a href="web-app.html">Web App</a>
+                <a href="ai.html">Intelligenza Artificiale</a>
+                <a href="chat-bot.html">Chat Bot</a>
+              </div>
+            </li>
             <li><a href="#chi-siamo">Chi Siamo</a></li>
             <li><a href="#contatti">Contatti</a></li>
           </ul>
         </nav>
       </header>
     `;
+
+    // Script dropdown
+    const menuServizi = shadow.querySelector(".menu-servizi");
+    const dropdown = shadow.querySelector(".dropdown");
+
+    menuServizi.addEventListener("mouseenter", () => {
+      dropdown.style.display = "flex";
+    });
+
+    menuServizi.addEventListener("mouseleave", () => {
+      dropdown.style.display = "none";
+    });
   }
 }
 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web & Mobile App - MA Tech</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Componenti Header e Footer -->
+  <script src="components/header.js" defer></script>
+  <script src="components/footer.js" defer></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header-component></header-component>
+
+  <!-- Hero dedicata -->
+  <section class="hero content">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+      <h1>Web & Mobile App</h1>
+      <p>Sviluppiamo applicazioni web e mobile performanti e scalabili.</p>
+      <a href="#dettagli" class="btn">Scopri di più</a>
+    </div>
+  </section>
+
+  <!-- Sezione Dettagli Servizio -->
+  <section id="dettagli" class="content-overlay">
+    <div class="servizi-container">
+      <h2>Cosa offriamo</h2>
+      <div class="servizio-card fade-left">
+        <img src="assets/img/react-native.png" alt="React Native">
+        <h3>Sviluppo con React Native</h3>
+        <p>Creiamo app native e ibride utilizzando React Native, compatibili con iOS e Android.</p>
+      </div>
+      <div class="servizio-card fade-right">
+        <img src="assets/img/android.png" alt="Pubblicazione Google Play">
+        <h3>Pubblicazione su Google Play</h3>
+        <p>Supportiamo la pubblicazione delle app sul Google Play Store in totale conformità.</p>
+      </div>
+      <div class="servizio-card fade-left">
+        <img src="assets/img/app-store.png" alt="Pubblicazione Apple Store">
+        <h3>Pubblicazione su Apple Store</h3>
+        <p>Gestiamo la pubblicazione su App Store, garantendo compatibilità e qualità.</p>
+      </div>
+      <div class="servizio-card fade-right">
+        <img src="assets/img/cloud.png" alt="Scalabilità & Cloud">
+        <h3>Scalabilità & Cloud</h3>
+        <p>Applicazioni scalabili con integrazione cloud per gestione dati e performance ottimale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione Benefici -->
+  <section class="adozione content-overlay">
+    <div class="adozione-container">
+      <h2>I vantaggi per la tua azienda</h2>
+      <div class="chart-vertical">
+        <div class="colonna">
+          <div class="colonna-fill" data-height="60">60%</div>
+          <span>Aumento utenti attivi</span>
+        </div>
+        <div class="colonna">
+          <div class="colonna-fill" data-height="45">45%</div>
+          <span>Miglior engagement</span>
+        </div>
+        <div class="colonna">
+          <div class="colonna-fill" data-height="35">35%</div>
+          <span>Aumento vendite o conversioni</span>
+        </div>
+        <div class="colonna">
+          <div class="colonna-fill" data-height="25">25%</div>
+          <span>Riduzione tempi di sviluppo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA finale -->
+  <section class="cta content-overlay">
+    <h2>Vuoi sviluppare la tua app con noi?</h2>
+    <p>Contattaci per una consulenza gratuita e scopri come portare la tua idea su Google Play e Apple Store.</p>
+    <a href="contatti.html" class="btn">Contattaci</a>
+  </section>
+
+  <!-- Footer -->
+  <footer-component></footer-component>
+
+  <!-- Script -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
