@@ -9,6 +9,8 @@
     /* Sfondo dinamico con particelle */
     #particles-js {
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       z-index: 0;
@@ -22,13 +24,11 @@
   </style>
 </head>
 <body>
-  <!-- Particles -->
-  <div id="particles-js"></div>
-
+  
   <!-- Navbar -->
   <header class="navbar content-overlay">
     <div class="logo">
-      <img src="assets/img/logo.png" alt="Logo" />
+      <img src="assets/img/logo.png" alt="Logo">
       <span>SoftTech</span>
     </div>
     <nav>
@@ -42,16 +42,42 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero content-overlay">
     <div class="hero-content">
+        <!-- Particles dentro Hero -->
+  <div id="particles-js"></div>
+
       <h1>MAleventum Software</h1>
       <p>Creiamo tecnologie su misura per far crescere il tuo business.</p>
       <a href="#servizi" class="btn">Scopri di più</a>
     </div>
   </section>
 
+  <!-- Perché scegliere noi -->
+  <section class="perche-noi content-overlay">
+    <div class="perche-noi-container">
+      <div class="perche-noi-img fade-left">
+        <img src="assets/img/perche-noi.jpg" alt="Perché scegliere noi">
+      </div>
+      <div class="perche-noi-text fade-right">
+        <h2>Perché scegliere noi</h2>
+        <p>
+          Siamo un team di esperti in sviluppo software e soluzioni digitali su misura. 
+          Offriamo servizi personalizzati, innovazione tecnologica e supporto continuo 
+          per far crescere il tuo business. La nostra esperienza e passione ci rendono 
+          il partner ideale per ogni progetto.
+        </p>
+        <ul>
+          <li>Soluzioni personalizzate</li>
+          <li>Supporto e consulenza costante</li>
+          <li>Innovazione e tecnologie all’avanguardia</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Sezione Servizi -->
-  <section id="servizi" class="servizi">
+  <section id="servizi" class="servizi content-overlay">
     <h2>I nostri Servizi</h2>
     <div class="servizi-container">
       <div class="servizio-card">
@@ -60,8 +86,8 @@
         <p>Creazione di applicazioni software su misura per il tuo business.</p>
       </div>
       <div class="servizio-card">
-        <img src="assets/img/code.png" alt="Web APP">
-        <h3>Web app</h3>
+        <img src="assets/img/code.png" alt="Web App">
+        <h3>Web App</h3>
         <p>Creazione di applicazioni web e mobile su misura per il tuo business.</p>
       </div>
       <div class="servizio-card">
@@ -78,14 +104,12 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="content-overlay">
     <p>© 2025 SoftTech - Tutti i diritti riservati</p>
   </footer>
 
   <!-- JS -->
   <script src="js/script.js"></script>
-
-  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
     particlesJS('particles-js', {
