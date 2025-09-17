@@ -59,24 +59,45 @@ body, html {
 /* ==========================
    HERO
 ========================== */
+/* Hero pagina Sviluppo Software */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #0a192f, #007bff);
+  height: 500px;       /* Altezza fissa o usa 70vh per responsive */
   text-align: center;
-  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a192f, #007bff);
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;       /* adesso prende solo l’altezza della hero */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
   z-index: 1;
+  color: #fff;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-shadow: 0 0 10px #00bfff, 0 0 20px #007bff;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
+
 
 .btn {
   display: inline-block;
