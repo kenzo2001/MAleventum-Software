@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SoftTech - Homepage</title>
+  <title>MA Tech - Homepage</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Componenti Header e Footer -->
+<script src="components/header.js" defer></script>
+<script src="components/footer.js" defer></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+
   <style>
     /* Sfondo dinamico con particelle */
     #particles-js {
@@ -16,38 +24,40 @@
       z-index: 0;
     }
 
-    /* Manteniamo i contenuti sopra le particelle */
-    .content-overlay {
+    /* Canvas Matrix */
+    #matrix {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Contenuti sopra le animazioni */
+    .content-overlay, .servizi-container {
       position: relative;
       z-index: 1;
+    }
+
+    /* Header e Footer sopra tutto */
+    header-component, footer-component {
+      position: relative;
+      z-index: 2;
+      display: block;
     }
   </style>
 </head>
 <body>
-  
-  <!-- Navbar -->
-  <header class="navbar content-overlay">
-    <div class="logo">
-      <img src="assets/img/logo.png" alt="Logo">
-      <span>SoftTech</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#chi-siamo">Chi Siamo</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-      </ul>
-    </nav>
-  </header>
+
+  <!-- Header Custom Element -->
+  <header-component></header-component>
 
   <!-- Hero Section -->
   <section class="hero content-overlay">
     <div class="hero-content">
-        <!-- Particles dentro Hero -->
-  <div id="particles-js"></div>
-
-      <h1>MAleventum Software</h1>
+      <div id="particles-js"></div>
+      <h1>MA Tech Software</h1>
       <p>Creiamo tecnologie su misura per far crescere il tuo business.</p>
       <a href="#servizi" class="btn">Scopri di più</a>
     </div>
@@ -61,12 +71,7 @@
       </div>
       <div class="perche-noi-text fade-right">
         <h2>Perché scegliere noi</h2>
-        <p>
-          Siamo un team di esperti in sviluppo software e soluzioni digitali su misura. 
-          Offriamo servizi personalizzati, innovazione tecnologica e supporto continuo 
-          per far crescere il tuo business. La nostra esperienza e passione ci rendono 
-          il partner ideale per ogni progetto.
-        </p>
+        <p>Siamo un team di esperti in sviluppo software e soluzioni digitali su misura...</p>
         <ul>
           <li>Soluzioni personalizzate</li>
           <li>Supporto e consulenza costante</li>
@@ -75,11 +80,43 @@
       </div>
     </div>
   </section>
+  
+<!-- Sezione Adozione & Impatti -->
+<section class="adozione content-overlay">
+  <div class="adozione-container">
+    <h2>Adozione e impatto delle soluzioni software</h2>
+    <p>Ecco cosa succede per le aziende che investono in tecnologia avanzata:</p>
+    
+    <div class="chart-vertical">
+      <div class="colonna">
+        <div class="colonna-fill" data-height="73">73%</div>
+        <span>Aziende previsti + ricavi con IA</span>
+      </div>
+      <div class="colonna">
+        <div class="colonna-fill" data-height="27">27%</div>
+        <span>Aziende senza previsione IA</span>
+      </div>
+      <div class="colonna">
+        <div class="colonna-fill" data-height="25">25%</div>
+        <span>Aumento fatturato medio digitale</span>
+      </div>
+      <div class="colonna">
+        <div class="colonna-fill" data-height="0">0%</div>
+        <span>Base (senza tech avanzata)</span>
+      </div>
+    </div>
+    
+    <div class="potenziale-guadagno">
+      <p>📈 +175 % entrate medie con campagne CRM / marketing automation. :contentReference[oaicite:6]{index=6}</p>
+    </div>
+  </div>
+</section>
 
   <!-- Sezione Servizi -->
-  <section id="servizi" class="hero content-overlay">
-    <h2>I nostri Servizi</h2>
+  <section id="servizi" class="hero content-overlay" style="position: relative; overflow: hidden;">
+    <canvas id="matrix"></canvas>
     <div class="servizi-container">
+      <h2>I nostri Servizi</h2>
       <div class="servizio-card">
         <img src="assets/img/code.png" alt="Sviluppo Software">
         <h3>Sviluppo Software</h3>
@@ -103,38 +140,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="content-overlay">
-    <p>© 2025 SoftTech - Tutti i diritti riservati</p>
-  </footer>
+  <!-- Footer Custom Element -->
+  <footer-component></footer-component>
 
-  <!-- JS -->
-  <script src="js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-        size: { value: 3 },
-        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 2 }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" }
-        },
-        modes: {
-          repulse: { distance: 100 },
-          push: { particles_nb: 4 }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
+  <!-- Script principale -->
+
+<script src="js/script.js" defer></script>
+
 </body>
 </html>

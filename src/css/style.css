@@ -102,7 +102,7 @@ body, html {
   display: flex;
   justify-content: center;
   padding: 80px 20px;
-  background:  #4d8be8;
+  background: linear-gradient(135deg,  #025bb9,#0a192f);
 }
 
 .perche-noi-container {
@@ -155,6 +155,10 @@ body, html {
 .perche-noi-text ul li {
   margin-bottom: 10px;
 }
+
+
+
+
 
 /* ==========================
    SERVIZI
@@ -261,4 +265,70 @@ footer {
 .fade-in {
   opacity: 1;
   transform: translateX(0);
+}
+
+
+/* Adozione Sezione aggiornata */
+.adozione {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #025bb9, #0a192f);
+  text-align: center;
+}
+
+.adozione-container {
+  max-width: 1000px;
+  margin: auto;
+  color: #f9f9f9;
+}
+
+.adozione-container h2 {
+  color: #00bfff;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.adozione-container p {
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.chart-vertical {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: flex-end;
+  height: 300px;
+}
+
+.colonna {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 120px;
+  position: relative;
+}
+
+.colonna-fill {
+  background: #00bfff;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  padding-top: 5px;
+  height: 0; /* partono da zero */
+  transition: height 1.5s ease-out;
+}
+
+.colonna span {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.potenziale-guadagno {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #ccc;
 }
