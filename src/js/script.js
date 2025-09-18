@@ -129,5 +129,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
     colonneContainer.forEach(col => colObserver.observe(col));
   }
+// === Animazione cerchi progressivi ===
+document.querySelectorAll(".circle-container").forEach(container => {
+  const circle = container.querySelector(".progress");
+  const percentText = container.querySelector(".percentage");
+  const percent = parseInt(container.getAttribute("data-percent"), 10);
+
+  const radius = circle.r.baseVal.value;
+  const circumference = 2 * Math.PI * radius;
+
+  circle.style.strokeDasharray = circumference;
+  circle.style.strokeDashoffset = circumference;
+
+  let progress = 0;
+  const interval = setInterval(() => {
+    if (progress >= percent) {
+      clearInterval(interval);
+    } else {
+      progress++;
+      const offset = circumference - (progress / 100) * circumference;
+      circle.style.strokeDashoffset = offset;
+      percentText.textContent = progress + "%";
+
+      // Cambio colore dinamico
+      if (progress < 30) circle.style.stroke = "#ff9800";
+      else if (progress < 60) circle.style.stroke = "#2196f3";
+      else circle.style.stroke = "#4caf50";
+    }
+  }, 20);
+});
 
 });

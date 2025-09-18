@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MA Tech - Homepage</title>
+  <title>MAleventum software - Homepage</title>
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Componenti Header e Footer -->
@@ -59,60 +59,91 @@
   <section class="hero content">
     <div id="particles-js"></div>
     <div class="hero-content">
-   <h1>MA Software</h1>
+   <h1>MAleventum Software</h1>
       <p>Creiamo tecnologie su misura per far crescere il tuo business.</p>
       <a href="#servizi" class="btn">Scopri di più</a>
     </div>
   </section>
 
   <!-- Perché scegliere noi -->
-  <section class="perche-noi content-overlay">
-    <div class="perche-noi-container">
-      <div class="perche-noi-img fade-left">
-        <img src="assets/img/perche-noi.jpg" alt="Perché scegliere noi">
-      </div>
-      <div class="perche-noi-text fade-right">
-        <h2>Perché scegliere noi</h2>
-        <p>Siamo un team di esperti in sviluppo software e soluzioni digitali su misura...</p>
-        <ul>
-          <li>Soluzioni personalizzate</li>
-          <li>Supporto e consulenza costante</li>
-          <li>Innovazione e tecnologie all’avanguardia</li>
-        </ul>
+<!-- Perché scegliere noi -->
+<section class="perche-noi content-overlay">
+  <div class="perche-noi-container">
+    
+    <!-- Immagine con overlay -->
+    <div class="perche-noi-img fade-left">
+      <img src="assets/img/perche-noi.jpg" alt="Perché scegliere noi">
+    </div>
+
+    <!-- Testo descrittivo -->
+    <div class="perche-noi-text fade-right">
+      <h2><span>Perché</span> scegliere noi</h2>
+      <p>
+        Non offriamo semplici servizi, ma <strong>strategie digitali su misura</strong> 
+        che trasformano idee in risultati concreti. Siamo il partner ideale per chi vuole crescere e innovare.
+      </p>
+
+      <div class="highlight-cards">
+        <div class="card">Soluzioni personalizzate e scalabili</div>
+        <div class="card">Supporto e consulenza costante</div>
+        <div class="card">Innovazione con tecnologie all’avanguardia</div>
       </div>
     </div>
-  </section>
-  
+
+  </div>
+</section>
+
+
 <!-- Sezione Adozione & Impatti -->
 <section class="adozione content-overlay">
   <div class="adozione-container">
     <h2>Adozione e impatto delle soluzioni software</h2>
     <p>Ecco cosa succede per le aziende che investono in tecnologia avanzata:</p>
-    
-    <div class="chart-vertical">
-      <div class="colonna">
-        <div class="colonna-fill" data-height="73">73%</div>
-        <span>Aziende previsti + ricavi con IA</span>
+
+    <div class="circle-charts">
+      <!-- Cerchio 1 -->
+      <div class="circle-container" data-percent="73">
+        <svg class="progress-circle" width="120" height="120">
+          <circle class="bg" cx="60" cy="60" r="50" />
+          <circle class="progress" cx="60" cy="60" r="50" />
+        </svg>
+        <div class="percentage">0%</div>
+        <p>Aziende che aumentano i ricavi con soluzioni IA</p>
       </div>
-      <div class="colonna">
-        <div class="colonna-fill" data-height="27">27%</div>
-        <span>Aziende senza previsione IA</span>
+
+      <!-- Cerchio 2 -->
+      <div class="circle-container" data-percent="27">
+        <svg class="progress-circle" width="120" height="120">
+          <circle class="bg" cx="60" cy="60" r="50" />
+          <circle class="progress" cx="60" cy="60" r="50" />
+        </svg>
+        <div class="percentage">0%</div>
+        <p>Imprese che restano indietro senza innovazione</p>
       </div>
-      <div class="colonna">
-        <div class="colonna-fill" data-height="25">25%</div>
-        <span>Aumento fatturato medio digitale</span>
+
+      <!-- Cerchio 3 -->
+      <div class="circle-container" data-percent="25">
+        <svg class="progress-circle" width="120" height="120">
+          <circle class="bg" cx="60" cy="60" r="50" />
+          <circle class="progress" cx="60" cy="60" r="50" />
+        </svg>
+        <div class="percentage">0%</div>
+        <p>Crescita media del fatturato digitale</p>
       </div>
-      <div class="colonna">
-        <div class="colonna-fill" data-height="0">0%</div>
-        <span>Base (senza tech avanzata)</span>
+
+      <!-- Cerchio 4 -->
+      <div class="circle-container" data-percent="40">
+        <svg class="progress-circle" width="120" height="120">
+          <circle class="bg" cx="60" cy="60" r="50" />
+          <circle class="progress" cx="60" cy="60" r="50" />
+        </svg>
+        <div class="percentage">0%</div>
+        <p>Aumento dell’engagement dei clienti</p>
       </div>
-    </div>
-    
-    <div class="potenziale-guadagno">
-      <p>📈 +175 % entrate medie con campagne CRM / marketing automation. :contentReference[oaicite:6]{index=6}</p>
     </div>
   </div>
 </section>
+
 
   <!-- Sezione Servizi -->
   <section id="servizi" class="hero content-overlay" style="position: relative; overflow: hidden;">
@@ -120,7 +151,7 @@
     <div class="servizi-container">
       <h2>I nostri Servizi</h2>
      <a href="sviluppo-software.html" class="servizio-card">
-  <img src="assets/img/code.png" alt="Sviluppo Software">
+  <img src="assets/img/sviluppo-software.jpg" alt="Sviluppo Software">
   <h3>Sviluppo Software</h3>
   <p>Creazione di applicazioni software su misura per il tuo business.</p>
 </a>
