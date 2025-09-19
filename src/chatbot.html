@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sviluppo Software - MA Tech</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Header e Footer -->
+  <script src="components/header.js" defer></script>
+  <script src="components/footer.js" defer></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header-component></header-component>
+
+  <!-- Hero -->
+  <section class="hero content chatbot-hero">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+      <h1>Chatbot su misura per il tuo business</h1>
+      <p>Automatizza le conversazioni, qualifica i lead e supporta i clienti 24/7 con assistenti virtuali personalizzati.</p>
+      <a href="#demo-chat" class="btn">Provalo ora</a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="content-overlay chatbot-overview">
+    <div class="overview-text fade-left">
+      <h2>Conversazioni intelligenti, risultati concreti</h2>
+      <p>
+        Progettiamo chatbot che comprendono il linguaggio naturale e si integrano con i tuoi strumenti aziendali.
+        Dal primo contatto alla gestione post-vendita, automatizziamo i flussi più ripetitivi lasciando al tuo team le attività ad alto valore.
+      </p>
+      <ul class="pill-list">
+        <li>Disponibilità 24/7</li>
+        <li>Integrazione CRM</li>
+        <li>Lead Qualification</li>
+        <li>Supporto multilingua</li>
+      </ul>
+    </div>
+    <div class="overview-metrics fade-right">
+      <div class="metric-card">
+        <span class="metric">-40%</span>
+        <p>Tempo medio di risposta</p>
+      </div>
+      <div class="metric-card">
+        <span class="metric">+65%</span>
+        <p>Conversazioni risolte senza operatore</p>
+      </div>
+      <div class="metric-card">
+        <span class="metric">+30%</span>
+        <p>Lead qualificati automaticamente</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chatbot Demo -->
+  <section id="demo-chat" class="content-overlay chatbot-demo">
+    <div class="chat-columns">
+      <div class="chat-card fade-left">
+        <div class="chat-header">
+          <div class="chat-brand">
+            <span class="status-dot"></span>
+            <div>
+              <h3>MA Assistant</h3>
+              <p>Online · Risponde in pochi secondi</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-body" id="chatbot-messages" role="log" aria-live="polite" aria-label="Conversazione con MA Assistant">
+          <div class="message bot">
+            <div class="avatar" aria-hidden="true">MA</div>
+            <div class="bubble">
+              Ciao! 👋 Sono l'assistente virtuale di MA Tech. Vuoi scoprire come possiamo aiutarti con un chatbot personalizzato?
+              <span class="timestamp">adesso</span>
+            </div>
+          </div>
+        </div>
+        <div class="typing-indicator hidden" id="chatbot-typing">
+          <span></span><span></span><span></span>
+        </div>
+        <form id="chatbot-form" class="chat-form" autocomplete="off">
+          <label class="sr-only" for="chatbot-input">Scrivi il tuo messaggio</label>
+          <input id="chatbot-input" type="text" placeholder="Scrivi un messaggio..." required>
+          <button type="submit" class="btn">Invia</button>
+        </form>
+      </div>
+
+      <aside class="chat-info fade-right">
+        <h3>Funzionalità principali</h3>
+        <ul>
+          <li>Comprensione del linguaggio naturale e risposte contestuali.</li>
+          <li>Collegamento con i tuoi sistemi per recuperare ordini, ticket o appuntamenti.</li>
+          <li>Funnel personalizzati per generare lead e guidarli all'azione giusta.</li>
+          <li>Reportistica per monitorare performance e livello di soddisfazione.</li>
+        </ul>
+
+        <div class="prompt-box">
+          <h4>Prova con queste domande</h4>
+          <div class="prompt-buttons" id="chatbot-prompts">
+            <button type="button" class="prompt-btn" data-message="Che tipo di chatbot realizzate?">Che tipo di chatbot realizzate?</button>
+            <button type="button" class="prompt-btn" data-message="Posso integrarlo con il mio CRM?">Posso integrarlo con il mio CRM?</button>
+            <button type="button" class="prompt-btn" data-message="Quanto tempo serve per andare online?">Quanto tempo serve per andare online?</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta content-overlay chatbot-cta">
+    <h2>Pronto a dare voce digitale al tuo brand?</h2>
+    <p>Analizziamo le tue esigenze, progettiamo il flusso ideale e sviluppiamo il chatbot che parla il linguaggio dei tuoi clienti.</p>
+    <a href="contatti.html" class="btn">Parliamone</a>
+  </section>
+
+  <!-- Footer -->
+  <footer-component></footer-component>
+
+  <!-- Script -->
+  <script src="js/chatbot.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

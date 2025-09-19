@@ -93,7 +93,7 @@ class HeaderComponent extends HTMLElement {
                 <a href="pagine-web.html">Pagine Web</a>
                 <a href="web-app.html">Web App</a>
                 <a href="ai.html">Intelligenza Artificiale</a>
-                <a href="chat-bot.html">Chat Bot</a>
+                <a href="chatbot.html">Chat Bot</a>
               </div>
             </li>
             <li><a href="#chi-siamo">Chi Siamo</a></li>
