@@ -195,19 +195,35 @@ body, html {
   text-align: center;
   background: #0f1c3a;
 }
+.servizio-link {
+  text-decoration: none; /* rimuove la sottolineatura */
+  color: inherit;        /* eredità del colore */
+  display: inline-block; /* evita effetti strani su padding/margin */
+}
 
 .servizi h2 {
   font-size: 2rem;
   color: #00bfff;
   margin-bottom: 50px;
+  text-align: center; /* centra il titolo */
+  width: 100%;        /* occupa tutta la larghezza disponibile */
+}
+.servizi-container h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center; /* centra il titolo */
+  width: 100%;
+  margin-bottom: 40px; /* spazio sotto il titolo */
 }
 
-.servizi-container {
+.servizi-cards {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centra le card orizzontalmente */
   gap: 40px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* va a capo su schermi piccoli */
 }
+
+
 
 .servizio-card {
   background: #112240;

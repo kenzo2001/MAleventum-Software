@@ -77,36 +77,28 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // ==========================
-  // Animazione Colonne "Adozione" (corretto)
+  // Animazione Colonne "Adozione"
   // ==========================
-  // - osserviamo .colonna (elemento con dimensione), non .colonna-fill che parte da 0
-  // - usiamo data-height sul .colonna-fill per valore finale (es: data-height="73")
-  // - animiamo altezza CSS + contatore interno
   const colonneContainer = document.querySelectorAll(".colonna");
-
   if (colonneContainer.length) {
     const colObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const col = entry.target; // .colonna
+          const col = entry.target;
           const fill = col.querySelector(".colonna-fill");
           if (!fill || fill.classList.contains("animated")) return;
 
-          // prendi il valore finale
           const finalStr = fill.dataset.height || fill.getAttribute("data-height") || "0";
           const finalHeight = Math.max(0, Math.min(100, parseFloat(finalStr))) || 0;
 
-          // assicurati che il CSS parta da 0
           fill.style.height = "0%";
           fill.textContent = "0%";
 
-          // ritardo microscopico per far partire la transizione CSS
           setTimeout(() => {
-            fill.style.height = finalHeight + "%"; // qui interviene la transition CSS (height)
+            fill.style.height = finalHeight + "%";
           }, 50);
 
-          // animazione numerica (count-up)
-          const duration = 1000; // ms
+          const duration = 1000;
           const start = performance.now();
           function step(now) {
             const elapsed = now - start;
@@ -116,12 +108,10 @@ document.addEventListener("DOMContentLoaded", function() {
             if (progress < 1) requestAnimationFrame(step);
             else {
               fill.textContent = finalHeight + "%";
-              fill.classList.add("animated"); // flag per non ri-animare
+              fill.classList.add("animated");
             }
           }
           requestAnimationFrame(step);
-
-          // una volta animata una colonna, non osservare più (opzionale)
           colObserver.unobserve(col);
         }
       });
@@ -129,34 +119,63 @@ document.addEventListener("DOMContentLoaded", function() {
 
     colonneContainer.forEach(col => colObserver.observe(col));
   }
-// === Animazione cerchi progressivi ===
-document.querySelectorAll(".circle-container").forEach(container => {
-  const circle = container.querySelector(".progress");
-  const percentText = container.querySelector(".percentage");
-  const percent = parseInt(container.getAttribute("data-percent"), 10);
 
-  const radius = circle.r.baseVal.value;
-  const circumference = 2 * Math.PI * radius;
+  // ==========================
+  // Animazione cerchi progressivi
+  // ==========================
+  document.querySelectorAll(".circle-container").forEach(container => {
+    const circle = container.querySelector(".progress");
+    const percentText = container.querySelector(".percentage");
+    const percent = parseInt(container.getAttribute("data-percent"), 10);
 
-  circle.style.strokeDasharray = circumference;
-  circle.style.strokeDashoffset = circumference;
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
 
-  let progress = 0;
-  const interval = setInterval(() => {
-    if (progress >= percent) {
-      clearInterval(interval);
-    } else {
-      progress++;
-      const offset = circumference - (progress / 100) * circumference;
-      circle.style.strokeDashoffset = offset;
-      percentText.textContent = progress + "%";
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset = circumference;
 
-      // Cambio colore dinamico
-      if (progress < 30) circle.style.stroke = "#ff9800";
-      else if (progress < 60) circle.style.stroke = "#2196f3";
-      else circle.style.stroke = "#4caf50";
-    }
-  }, 20);
-});
+    let progress = 0;
+    const interval = setInterval(() => {
+      if (progress >= percent) {
+        clearInterval(interval);
+      } else {
+        progress++;
+        const offset = circumference - (progress / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+        percentText.textContent = progress + "%";
+
+        if (progress < 30) circle.style.stroke = "#ff9800";
+        else if (progress < 60) circle.style.stroke = "#2196f3";
+        else circle.style.stroke = "#4caf50";
+      }
+    }, 20);
+  });
+
+  // ==========================
+  // Sincronizza altezza Perché Noi & Adozione
+  // ==========================
+  function syncHeights() {
+    const percheNoi = document.querySelector('.perche-noi');
+    const adozione = document.querySelector('.adozione');
+
+    if (!percheNoi || !adozione) return;
+
+    // reset per ricalcolare dinamicamente
+    percheNoi.style.height = 'auto';
+    adozione.style.height = 'auto';
+
+    const maxHeight = Math.max(percheNoi.offsetHeight, adozione.offsetHeight);
+
+    percheNoi.style.height = `${maxHeight}px`;
+    adozione.style.height = `${maxHeight}px`;
+  }
+
+  // sincronizza subito e al resize
+  syncHeights();
+  window.addEventListener('resize', syncHeights);
+
+  // sincronizza anche dopo le animazioni (colonne e cerchi) con piccolo delay
+  setTimeout(syncHeights, 1000);
+  setTimeout(syncHeights, 2000);
 
 });
