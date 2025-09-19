@@ -17,6 +17,7 @@ class FooterComponent extends HTMLElement {
       </style>
       <footer>
         <p>© 2025 MAleventum software- Tutti i diritti riservati</p>
+        <p> maleventumsoftware@gmail.com</p>
       </footer>
     `;
   }

@@ -1,0 +1,25 @@
+/* ==========================
+   Responsive
+========================== */
+@media (max-width: 768px) {
+  .circle-charts {
+    gap: 25px;
+  }
+
+  .circle-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .percentage {
+    font-size: 16px;
+  }
+
+  .adozione-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .adozione-container p {
+    font-size: 1rem;
+  }
+}

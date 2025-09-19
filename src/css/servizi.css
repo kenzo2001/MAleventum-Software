@@ -1,0 +1,122 @@
+/* ==========================
+   Sezione Servizi
+========================== */
+.servizi {
+  padding: 80px 20px;
+  text-align: center;
+  background: #0f1c3a;
+}
+
+.servizi h2,
+.servizi-container h2 {
+  font-size: 2.5rem;       /* titolo più grande */
+  color: #00bfff;
+  text-align: center;      /* centrato */
+  width: 100%;
+  margin-bottom: 40px;     /* spazio tra titolo e card */
+}
+
+.servizi-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: stretch;  /* rende tutte le card stessa altezza */
+}
+
+/* Link card */
+.servizio-link {
+  text-decoration: none; /* rimuove sottolineatura */
+  color: inherit;
+  display: inline-block;
+}
+
+/* ==========================
+   Card Servizi
+========================== */
+.servizio-card {
+  background: #112240;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  padding: 30px 20px;
+  max-width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* obbliga le card a occupare tutta l'altezza del contenitore */
+}
+
+.servizio-card img {
+  width: 60px;          /* puoi variare a seconda delle tue esigenze */
+  margin: 0 auto 20px;  /* centro orizzontalmente e spazio sotto */
+  display: block;       /* garantisce il comportamento corretto del margin auto */
+}
+
+.servizio-card h3 {
+  color: #00bfff;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.servizio-card p {
+  font-size: 1rem;
+  color: #ccc;
+  flex-grow: 1; /* occupa spazio restante per uniformare altezza card */
+}
+
+.servizio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 191, 255, 0.5);
+}
+
+/* ==========================
+   Grafico a cerchi
+========================== */
+.circle-charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+circle.bg {
+  stroke: #444;
+}
+
+circle.progress {
+  stroke: #00bfff;
+  stroke-linecap: round;
+  stroke-dasharray: 314; /* 2*π*r con r=50 */
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+}
+

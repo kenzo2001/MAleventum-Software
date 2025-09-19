@@ -1,0 +1,65 @@
+.perche-noi {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0a192f, #007bff);
+  color: #fff;
+}
+
+.perche-noi-container {
+  display: flex;
+  align-items: stretch; /* Assicura la stessa altezza tra immagine e testo */
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.perche-noi-img,
+.perche-noi-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.perche-noi-img img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  object-fit: cover; /* Mantiene proporzioni immagine */
+  flex: 1; /* Occupa tutta l’altezza disponibile */
+}
+
+.perche-noi-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.perche-noi-text h2 span {
+  color: #00bfff;
+}
+
+.perche-noi-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.highlight-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.highlight-cards .card {
+  background: rgba(0, 191, 255, 0.08);
+  border: 1px solid #00bfff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 1.05rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.highlight-cards .card:hover {
+  background: rgba(0, 191, 255, 0.2);
+  transform: translateY(-3px);
+}

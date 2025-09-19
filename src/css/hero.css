@@ -1,0 +1,55 @@
+.hero {
+  position: relative;
+  height: 70vh; /* più responsive */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a192f, #007bff);
+}
+
+/* Contenitore immagine subito sotto il titolo */
+.hero-img {
+  width: 100%;           /* occupa l’80% della larghezza del container */
+  max-width: 400px;     /* limita la larghezza massima */
+  margin: 0;            /* nessun margine extra */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  width: 50%;          
+  height: auto;         
+  object-fit: cover;    
+}
+
+/* Particelle dietro */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Titolo e testo */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 0 15px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0;       /* elimina spazio tra titolo e immagine */
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #007bff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;  /* piccolo spazio sopra e sotto il paragrafo */
+  max-width: 700px;
+}

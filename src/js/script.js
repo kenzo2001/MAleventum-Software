@@ -150,6 +150,34 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }, 20);
   });
+  // Link al footer
+const linkFooter = document.getElementById('link-footer');
+
+if (linkFooter) {
+  linkFooter.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // Recupera il footer dal Shadow DOM
+    const footerComponent = document.querySelector('footer-component');
+    if (!footerComponent) return;
+
+    const footer = footerComponent.shadowRoot.querySelector('footer');
+    if (!footer) return;
+
+    // Calcola l’altezza dell’header (se è sticky/fisso)
+    const header = document.querySelector('header-component');
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    // Scroll fluido con offset per header
+    const footerTop = footer.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+    window.scrollTo({
+      top: footerTop,
+      behavior: 'smooth'
+    });
+  });
+}
+
 
   // ==========================
   // Sincronizza altezza Perché Noi & Adozione

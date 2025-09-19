@@ -97,12 +97,13 @@ class HeaderComponent extends HTMLElement {
               </div>
             </li>
             <li><a href="#chi-siamo">Chi Siamo</a></li>
-            <li><a href="#contatti">Contatti</a></li>
+            <li><a href="contatti.html">Sviluppo Software</a>
+
           </ul>
         </nav>
       </header>
     `;
-
+2
     // Script dropdown
     const menuServizi = shadow.querySelector(".menu-servizi");
     const dropdown = shadow.querySelector(".dropdown");

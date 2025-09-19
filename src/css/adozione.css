@@ -1,0 +1,48 @@
+/* ==========================
+   SEZIONE ADOZIONE
+========================== */
+/* ==========================
+   SEZIONE ADOZIONE
+========================== */
+.adozione {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #025bb9, #0a192f);
+  text-align: center;
+  color: #fff;
+}
+
+.adozione-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.adozione-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 5px; /* prima era 10px */
+  line-height: 1.2;   /* più compatto */
+}
+
+.adozione-container p {
+  font-size: 1.1rem;
+  margin-bottom: 15px; /* prima 30px */
+  line-height: 1.3;
+  color: #ccc;
+}
+
+.circle-container p {
+  margin-top: 5px; /* prima 10px */
+  font-size: 0.9rem;
+  line-height: 1.1;
+  color: #ddd;
+}
+
+.colonna span {
+  margin-top: 5px; /* prima 10px */
+  font-size: 0.9rem;
+  line-height: 1.1;
+  color: #f9f9f9;
+}

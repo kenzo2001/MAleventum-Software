@@ -1,0 +1,23 @@
+/* ==========================
+   MAIN.CSS
+   Importa tutti i moduli
+========================== */
+
+/* Struttura e reset */
+@import url("base.css");
+
+/* Layout principali */
+@import url("pagina-contatti.css");
+@import url("sviluppoSoftware.css");
+@import url("pagineWeb.css");
+@import url("navbar.css");
+@import url("hero.css");
+@import url("perche-noi.css");
+@import url("servizi.css");
+@import url("adozione.css");
+@import url("chatbot.css");
+@import url("footer.css");
+
+/* Effetti e responsive */
+@import url("animations.css");
+@import url("responsive.css");

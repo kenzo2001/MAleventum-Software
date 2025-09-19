@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - MAsoftware</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <header-component></header-component>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Contattaci</h1>
+      <p>Hai domande o vuoi un preventivo? Compila il modulo e ti risponderemo al più presto.</p>
+    </div>
+  </section>
+
+  <section class="servizi-container">
+    <div class="servizio-card fade-left">
+      <h3>Modulo di contatto</h3>
+      <p>Scrivici direttamente qui sotto:</p>
+      <form id="contact-form">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="messaggio" placeholder="Messaggio" required></textarea>
+        <button type="submit" class="btn">Invia Messaggio</button>
+      </form>
+    </div>
+
+    <div class="servizio-card fade-right">
+      <h3>Altri modi per contattarci</h3>
+      <p>Email: <a href="mailto:maleventumsoftware@gmail.com">maleventumsoftware@gmail.com</a></p>
+      <p>Telefono: +39 123 456 7890</p>
+      <p>Indirizzo: Via Esempio 12, 82100 Benevento (BN)</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Restiamo in contatto!</h2>
+    <p>Iscriviti alla nostra newsletter per ricevere aggiornamenti su servizi, offerte e novità tecnologiche.</p>
+    <a href="#" class="btn">Iscriviti</a>
+  </section>
+
+  <footer-component></footer-component>
+
+  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Messaggio inviato! Ti risponderemo presto.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

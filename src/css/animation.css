@@ -1,0 +1,61 @@
+/* Animazioni generiche */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ==========================
+   Grafico a cerchi
+========================== */
+.circle-charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+circle.bg {
+  stroke: #444;
+}
+
+circle.progress {
+  stroke: #00bfff;
+  stroke-linecap: round;
+  stroke-dasharray: 314; /* 2*π*r con r=50 */
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+}

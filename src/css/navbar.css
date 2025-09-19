@@ -1,0 +1,43 @@
+
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: rgba(10,25,47,0.9);
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.navbar .logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00bfff;
+}
