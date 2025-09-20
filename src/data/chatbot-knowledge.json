@@ -1,0 +1,34 @@
+[
+  {
+    "triggers": ["tipo", "tipi", "realizzate", "settori", "vertical"],
+    "reply": "Creiamo chatbot conversazionali per supporto clienti, lead generation, onboarding interno e prenotazioni. Ogni flusso viene progettato sulle tue procedure operative."
+  },
+  {
+    "triggers": ["crm", "hubspot", "salesforce", "integ", "gestionale"],
+    "reply": "Possiamo integrare il chatbot con CRM, helpdesk o gestionali tramite API. Questo ci permette di recuperare dati, aprire ticket e aggiornare i contatti in tempo reale."
+  },
+  {
+    "triggers": ["tempo", "quanto", "online", "settimane", "rilascio"],
+    "reply": "Per un MVP servono 3-4 settimane: analisi, progettazione dei dialoghi, sviluppo e test. Per progetti più complessi definiamo una roadmap iterativa con rilasci progressivi."
+  },
+  {
+    "triggers": ["costo", "prezzo", "budget", "costi"],
+    "reply": "Il costo dipende da complessità, canali e integrazioni richieste. Dopo una call di discovery prepariamo un preventivo dettagliato con fasi e SLA."
+  },
+  {
+    "triggers": ["lingua", "multilingua", "inglese", "italiano"],
+    "reply": "Supportiamo più lingue e possiamo addestrare risposte specifiche per ogni mercato. Il cambio lingua avviene in automatico in base all’utente."
+  },
+  {
+    "triggers": ["demo", "provare", "prova", "test"],
+    "reply": "Prepariamo una demo interattiva con i tuoi contenuti in pochi giorni. Così puoi validare il flusso prima della messa in produzione."
+  },
+  {
+    "triggers": ["umano", "operatore", "handoff"],
+    "reply": "Quando serve, il chatbot trasferisce la conversazione a un operatore umano passando contesto e cronologia. Decidiamo insieme quando far scattare il passaggio."
+  },
+  {
+    "triggers": ["contatto", "call", "consulenza"],
+    "reply": "Possiamo fissare una call esplorativa per capire obiettivi e casi d’uso. Scrivici dalla pagina contatti o invia una mail a maleventumsoftware@gmail.com."
+  }
+]

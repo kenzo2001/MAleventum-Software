@@ -8,40 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form || !input || !messages) return;
 
-  const knowledgeBase = [
-    {
-      triggers: ['tipo', 'tipi', 'realizzate', 'settori', 'vertical'],
-      reply: 'Creiamo chatbot conversazionali per supporto clienti, lead generation, onboarding interno e prenotazioni. Ogni flusso viene progettato sulle tue procedure operative.'
-    },
-    {
-      triggers: ['crm', 'hubspot', 'salesforce', 'integ', 'gestionale'],
-      reply: 'Possiamo integrare il chatbot con CRM, helpdesk o gestionali tramite API. Questo ci permette di recuperare dati, aprire ticket e aggiornare i contatti in tempo reale.'
-    },
-    {
-      triggers: ['tempo', 'quanto', 'online', 'settimane', 'rilascio'],
-      reply: 'Per un MVP servono 3-4 settimane: analisi, progettazione dei dialoghi, sviluppo e test. Per progetti più complessi definiamo una roadmap iterativa con rilasci progressivi.'
-    },
-    {
-      triggers: ['costo', 'prezzo', 'budget', 'costi'],
-      reply: 'Il costo dipende da complessità, canali e integrazioni richieste. Dopo una call di discovery prepariamo un preventivo dettagliato con fasi e SLA.'
-    },
-    {
-      triggers: ['lingua', 'multilingua', 'inglese', 'italiano'],
-      reply: 'Supportiamo più lingue e possiamo addestrare risposte specifiche per ogni mercato. Il cambio lingua avviene in automatico in base all’utente.'
-    },
-    {
-      triggers: ['demo', 'provare', 'prova', 'test'],
-      reply: 'Prepariamo una demo interattiva con i tuoi contenuti in pochi giorni. Così puoi validare il flusso prima della messa in produzione.'
-    },
-    {
-      triggers: ['umano', 'operatore', 'handoff'],
-      reply: 'Quando serve, il chatbot trasferisce la conversazione a un operatore umano passando contesto e cronologia. Decidiamo insieme quando far scattare il passaggio.'
-    },
-    {
-      triggers: ['contatto', 'call', 'consulenza'],
-      reply: 'Possiamo fissare una call esplorativa per capire obiettivi e casi d’uso. Scrivici dalla pagina contatti o invia una mail a hello@maleventum.software.'
+  let knowledgeBase = [];
+
+  const loadKnowledgeBase = async () => {
+    try {
+      const response = await fetch('data/chatbot-knowledge.json');
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        knowledgeBase = data.map(item => ({
+          triggers: Array.isArray(item.triggers) ? item.triggers.map(String) : [],
+          reply: typeof item.reply === 'string' ? item.reply : ''
+        }));
+      }
+    } catch (error) {
+      console.error('Impossibile caricare la knowledge base del chatbot:', error);
+      knowledgeBase = [];
     }
-  ];
+  };
+
+  const knowledgeReady = loadKnowledgeBase();
 
   const fallbackReplies = [
     'Interessante! Raccontami qualcosa in più su come vorresti usare il chatbot e ti spiego come possiamo impostarlo.',
@@ -92,12 +78,29 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const getBotReply = (input) => {
-    const normalized = input.toLowerCase();
-    const hit = knowledgeBase.find(item =>
-      item.triggers.some(keyword => normalized.includes(keyword))
-    );
+    if (!knowledgeBase.length) {
+      return fallbackReplies[Math.floor(Math.random() * fallbackReplies.length)];
+    }
 
-    if (hit) return hit.reply;
+    const normalized = input.toLowerCase();
+    let bestMatch = null;
+    let bestScore = 0;
+
+    knowledgeBase.forEach(item => {
+      if (!item.triggers || !item.triggers.length) return;
+      const score = item.triggers.reduce((count, trigger) => {
+        if (!trigger) return count;
+        const keyword = String(trigger).toLowerCase().trim();
+        return keyword && normalized.includes(keyword) ? count + 1 : count;
+      }, 0);
+
+      if (score > bestScore && item.reply) {
+        bestScore = score;
+        bestMatch = item.reply;
+      }
+    });
+
+    if (bestMatch) return bestMatch;
 
     return fallbackReplies[Math.floor(Math.random() * fallbackReplies.length)];
   };
@@ -106,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleTyping(true);
     const delay = Math.min(1200, 500 + text.length * 20);
 
-    setTimeout(() => {
+    setTimeout(async () => {
+      await knowledgeReady;
       const reply = getBotReply(text);
       appendMessage(reply, 'bot');
       toggleTyping(false);
