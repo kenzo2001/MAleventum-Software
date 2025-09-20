@@ -96,7 +96,6 @@ class HeaderComponent extends HTMLElement {
                 <a href="chatbot.html">Chat Bot</a>
               </div>
             </li>
-            <li><a href="chi-siamo.html">Chi Siamo</a></li>
             <li><a href="contatti.html">Contatti</a>
 
           </ul>
