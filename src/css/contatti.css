@@ -1,17 +1,21 @@
 /* ==========================
-   PAGINA CONTATTI
+   CONTATTI ESSENZIALE
 ========================== */
 
 /* Hero */
-.contatti-hero {
+.contatti-hero, .gradient-hero {
+  position: relative;
   min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #f0f6ff;
-  background: linear-gradient(135deg, rgba(0, 191, 255, 0.12), rgba(0, 191, 255, 0.02));
+  background: linear-gradient(270deg, #00bfff, #1a1a2e, #0a192f);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 .contatti-hero .hero-content {
@@ -28,7 +32,21 @@
   color: #d6e3ff;
 }
 
-/* Sezione Contatti */
+/* Animazioni fade */
+.fade-left, .fade-right {
+  opacity: 0;
+  transform: translateX(0);
+  animation: fade 1s forwards;
+}
+
+.fade-left { transform: translateX(-30px); animation-delay: 0.2s; }
+.fade-right { transform: translateX(30px); animation-delay: 0.4s; }
+
+@keyframes fade {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Sezione contatti */
 .contatti-section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -42,7 +60,7 @@
   align-items: flex-start;
 }
 
-/* Card Form */
+/* Card form */
 .contatti-card {
   flex: 1 1 420px;
   background: rgba(8, 22, 43, 0.95);
@@ -140,7 +158,43 @@
     flex-direction: column;
   }
 }
-.contatti-card, .contatti-info {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+
+/* ==========================
+   ICON FLOATING
+========================== */
+.floating-icons {
+  position: absolute;
+  bottom: 0; /* partono dal basso */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.float-icon {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(0, 191, 255, 0.6);
+  bottom: 0; /* start dal basso */
+  animation: floatUp linear infinite;
+}
+
+/* Diversi ritardi, velocità e posizioni iniziali */
+.float-icon:nth-child(1) { left: 5%;  animation-duration: 12s; animation-delay: 0s; }
+.float-icon:nth-child(2) { left: 20%; animation-duration: 15s; animation-delay: 2s; }
+.float-icon:nth-child(3) { left: 35%; animation-duration: 18s; animation-delay: 1s; }
+.float-icon:nth-child(4) { left: 50%; animation-duration: 14s; animation-delay: 3s; }
+.float-icon:nth-child(5) { left: 65%; animation-duration: 16s; animation-delay: 2s; }
+.float-icon:nth-child(6) { left: 75%; animation-duration: 13s; animation-delay: 1s; }
+.float-icon:nth-child(7) { left: 85%; animation-duration: 17s; animation-delay: 0s; }
+.float-icon:nth-child(8) { left: 90%; animation-duration: 12s; animation-delay: 3s; }
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  25%  { transform: translateY(-25vh) translateX(10px) rotate(10deg); opacity: 0.7; }
+  50%  { transform: translateY(-50vh) translateX(-10px) rotate(-10deg); opacity: 0.8; }
+  75%  { transform: translateY(-75vh) translateX(10px) rotate(5deg); opacity: 0.7; }
+  100% { transform: translateY(-100vh) translateX(0) rotate(0deg); opacity: 0; }
 }
