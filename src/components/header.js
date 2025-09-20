@@ -97,7 +97,7 @@ class HeaderComponent extends HTMLElement {
               </div>
             </li>
             <li><a href="#chi-siamo">Chi Siamo</a></li>
-            <li><a href="contatti.html">Sviluppo Software</a>
+            <li><a href="contatti.html">Contatti</a>
 
           </ul>
         </nav>

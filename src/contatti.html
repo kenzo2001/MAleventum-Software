@@ -3,56 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatti - MAsoftware</title>
-  <link rel="stylesheet" href="main.css">
+  <title>Contatti - MA Tech</title>
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Header e Footer -->
+  <script src="components/header.js" defer></script>
+  <script src="components/footer.js" defer></script>
 </head>
 <body>
 
+  <!-- Header -->
   <header-component></header-component>
 
-  <section class="hero">
+  <!-- Hero -->
+  <section class="hero contatti-hero">
     <div class="hero-content">
-      <h1>Contattaci</h1>
-      <p>Hai domande o vuoi un preventivo? Compila il modulo e ti risponderemo al più presto.</p>
+      <h1>Mettiti in contatto con noi</h1>
+      <p>Vuoi parlare con il nostro team? Compila il modulo o utilizza i nostri riferimenti diretti.</p>
     </div>
   </section>
 
-  <section class="servizi-container">
-    <div class="servizio-card fade-left">
-      <h3>Modulo di contatto</h3>
-      <p>Scrivici direttamente qui sotto:</p>
-      <form id="contact-form">
-        <input type="text" name="nome" placeholder="Nome" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="messaggio" placeholder="Messaggio" required></textarea>
-        <button type="submit" class="btn">Invia Messaggio</button>
-      </form>
-    </div>
+  <!-- Sezione Contatti -->
+  <section class="content-overlay contatti-section">
+    <div class="contatti-columns">
+      
+      <!-- Modulo -->
+      <div class="contatti-card fade-left">
+        <h2>Scrivici un messaggio</h2>
+        <form class="contatti-form">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
 
-    <div class="servizio-card fade-right">
-      <h3>Altri modi per contattarci</h3>
-      <p>Email: <a href="mailto:maleventumsoftware@gmail.com">maleventumsoftware@gmail.com</a></p>
-      <p>Telefono: +39 123 456 7890</p>
-      <p>Indirizzo: Via Esempio 12, 82100 Benevento (BN)</p>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Invia</button>
+        </form>
+      </div>
+
+      <!-- Info dirette -->
+      <aside class="contatti-info fade-right">
+        <h2>Contatti diretti</h2>
+        <ul>
+          <li><strong>Email:</strong> info@matech.it</li>
+          <li><strong>Telefono:</strong> +39 333 123 4567</li>
+          <li><strong>Sede:</strong> Via Roma 123, Milano</li>
+        </ul>
+      </aside>
+
     </div>
   </section>
 
-  <section class="cta">
-    <h2>Restiamo in contatto!</h2>
-    <p>Iscriviti alla nostra newsletter per ricevere aggiornamenti su servizi, offerte e novità tecnologiche.</p>
-    <a href="#" class="btn">Iscriviti</a>
+  <!-- CTA -->
+  <section class="cta contatti-cta">
+    <h2>Vuoi parlarne subito?</h2>
+    <p>Il nostro team è pronto a rispondere alle tue domande e a valutare insieme le tue esigenze.</p>
+    <a href="tel:+393331234567" class="btn">Chiamaci ora</a>
   </section>
 
+  <!-- Footer -->
   <footer-component></footer-component>
 
-  <script src="script.js"></script>
-  <script>
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Messaggio inviato! Ti risponderemo presto.');
-      form.reset();
-    });
-  </script>
 </body>
 </html>
