@@ -91,7 +91,7 @@ class HeaderComponent extends HTMLElement {
               <div class="dropdown">
                 <a href="sviluppo-software.html">Sviluppo Software</a>
                 <a href="pagine-web.html">Pagine Web</a>
-                <a href="web-app.html">Web App</a>
+                <a href="web.app.html">Web App</a>
                 <a href="ai.html">Intelligenza Artificiale</a>
                 <a href="chatbot.html">Chat Bot</a>
               </div>
