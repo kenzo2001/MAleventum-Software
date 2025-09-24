@@ -108,6 +108,27 @@
   margin-top: 10px;
 }
 
+.form-status {
+  margin-top: 18px;
+  min-height: 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #d5e2ff;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.form-status.pending {
+  color: #00bfff;
+}
+
+.form-status.success {
+  color: #2ad1a3;
+}
+
+.form-status.error {
+  color: #ff6b8b;
+}
+
 /* Info dirette */
 .contatti-info {
   flex: 1 1 260px;

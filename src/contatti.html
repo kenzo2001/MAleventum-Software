@@ -43,7 +43,7 @@
       <!-- Modulo -->
       <div class="contatti-card fade-left">
         <h2>Scrivici un messaggio</h2>
-        <form class="contatti-form" action="https://formspree.io/f/xblzlrwg" method="POST">
+        <form class="contatti-form" id="contactForm" data-endpoint="https://formspree.io/f/xblzlrwg">
           <label for="nome">Nome</label>
           <input type="text" id="nome" name="nome" required>
 
@@ -55,6 +55,7 @@
 
           <button type="submit" class="btn">Invia</button>
         </form>
+        <p id="form-status" class="form-status" aria-live="polite"></p>
       </div>
 
       <!-- Info dirette -->
@@ -62,7 +63,7 @@
         <h2>Contatti diretti</h2>
         <ul>
           <li><strong>Email:</strong> maleventumsoftware@gmail.com</li>
-          <li><strong>Telefono:</strong> +39 333 7698 626 - 3277545532</li>
+          <li><strong>Telefono:</strong> +39 333 7698626 - +39 327 7545532</li>
           <li><strong>Sede:</strong> Via Roma 123, Milano</li>
         </ul>
       </aside>
@@ -79,6 +80,49 @@
 
   <!-- Footer -->
   <footer-component></footer-component>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+
+      const endpoint = form.dataset.endpoint;
+      if (!endpoint) return;
+
+      const statusEl = document.getElementById('form-status');
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        statusEl.textContent = 'Invio in corso…';
+        statusEl.className = 'form-status pending';
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            statusEl.textContent = '✅ Messaggio inviato correttamente!';
+            statusEl.className = 'form-status success';
+            form.reset();
+          } else {
+            statusEl.textContent = '❌ Si è verificato un errore, riprova.';
+            statusEl.className = 'form-status error';
+          }
+        } catch (error) {
+          statusEl.textContent = '⚠️ Errore di connessione.';
+          statusEl.className = 'form-status error';
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
