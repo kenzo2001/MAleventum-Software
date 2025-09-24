@@ -223,8 +223,6 @@ body, html {
   flex-wrap: wrap; /* va a capo su schermi piccoli */
 }
 
-
-
 .servizio-card {
   background: #112240;
   border-radius: 12px;
@@ -232,6 +230,7 @@ body, html {
   padding: 30px 20px;
   max-width: 280px;
   transition: all 0.3s ease;
+  height: 100%;
 }
 
 .servizio-card img {

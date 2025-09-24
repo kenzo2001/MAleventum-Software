@@ -21,6 +21,7 @@
   <!-- Hero dedicata -->
 <section class="ss-hero content">
   <canvas id="ss-hero-canvas"></canvas>
+  <div id="particles-js"></div>
 
   <div class="ss-hero-content">
     <h1>Sviluppo Software</h1>
@@ -36,19 +37,19 @@
   <section id="dettagli" class="content-overlay">
     <div class="servizi-container">
       <h2>Cosa offriamo</h2>
-      <div class="servizio-card fade-left">
+      <div class="servizio-card">
         <img src="assets/img/code.png" alt="Software Personalizzato">
         <h3>Software Personalizzato</h3>
         <p>Analizziamo le tue esigenze e sviluppiamo applicazioni desktop, mobile e web
            che si integrano perfettamente con il tuo flusso di lavoro.</p>
       </div>
-      <div class="servizio-card fade-right">
+      <div class="servizio-card">
         <img src="assets/img/cloud.png" alt="Cloud & Sicurezza">
         <h3>Cloud & Sicurezza</h3>
         <p>Soluzioni scalabili su cloud con massima attenzione alla protezione dei dati aziendali.</p>
       </div>
-      <div class="servizio-card fade-left">
-        <img src="assets/img/automation.png" alt="Automazione Processi">
+      <div class="servizio-card">
+        <img src="assets/img/process-automation.png" alt="Automazione Processi">
         <h3>Automazione Processi</h3>
         <p>Riduciamo i costi e aumentiamo l’efficienza automatizzando attività ripetitive e manuali.</p>
       </div>
@@ -59,22 +60,41 @@
   <section class="adozione content-overlay">
     <div class="adozione-container">
       <h2>I vantaggi per la tua azienda</h2>
-      <div class="chart-vertical">
-        <div class="colonna">
-          <div class="colonna-fill" data-height="40">40%</div>
-          <span>Riduzione costi operativi</span>
+      <div class="circle-charts">
+        <div class="circle-container" data-percent="40">
+        <svg class="progress-circle" width="120" height="120">
+          <circle class="bg" cx="60" cy="60" r="50" />
+          <circle class="progress" cx="60" cy="60" r="50" />
+        </svg>
+        <div class="percentage">40%</div>
+        <p>Riduzione costi operativi</p>
         </div>
-        <div class="colonna">
-          <div class="colonna-fill" data-height="55">55%</div>
-          <span>Aumento produttività</span>
+
+        <div class="circle-container" data-percent="55">
+          <svg class="progress-circle" width="120" height="120">
+            <circle class="bg" cx="60" cy="60" r="50" />
+            <circle class="progress" cx="60" cy="60" r="50" />
+          </svg>
+          <div class="percentage">55%</div>
+          <p>Aumento produttività</p>
         </div>
-        <div class="colonna">
-          <div class="colonna-fill" data-height="30">30%</div>
-          <span>Nuovi clienti acquisiti</span>
+        
+        <div class="circle-container" data-percent="30">
+          <svg class="progress-circle" width="120" height="120">
+            <circle class="bg" cx="60" cy="60" r="50" />
+            <circle class="progress" cx="60" cy="60" r="50" />
+          </svg>
+          <div class="percentage">30%</div>
+          <p>Nuovi clienti acquisiti</p>
         </div>
-        <div class="colonna">
-          <div class="colonna-fill" data-height="20">20%</div>
-          <span>Tempo risparmiato</span>
+
+        <div class="circle-container" data-percent="20">
+          <svg class="progress-circle" width="120" height="120">
+            <circle class="bg" cx="60" cy="60" r="50" />
+            <circle class="progress" cx="60" cy="60" r="50" />
+          </svg>
+          <div class="percentage">20%</div>
+          <p>Tempo risparmiato</p>
         </div>
       </div>
     </div>
